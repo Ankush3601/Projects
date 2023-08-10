@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+           {% endblock %}
+    </title>
+</head>
+<body>
+<h1> Todolist(Remember everything Forget Nothing</h1>
+<div id="sidebar">
+    <ul>
+        <li><a href="">home</a></li>
+        <li><a href="/listapp/create/">Create New</a></li>
+        <li><a href="/listapp/conact/">Contact Us</a></li>
+
+    </ul>
+</div>
+<div id="content">
+    {% block content %}
+     {% endblock %}
+</div>
+</body>
+</html>

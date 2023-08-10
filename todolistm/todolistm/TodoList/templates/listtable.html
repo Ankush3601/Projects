@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-bordered table-hover">
+  <thead class="thread-dark">
+
+    <tr>
+        <th> Title </th>
+        <th> Category </th>
+        <th> Description </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for task in tasks %}
+    <tr>
+        <td> {{ task.title }} </td>
+        <td> {{ task.category }} </td>
+        <td> {{ task.description }} </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<!-- Button to trigger the modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add Task</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"><strong>ToDo List</strong></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <!-- Form goes here -->
+        <form id="myForm" method="post">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="category" class="col-form-label">Category:</label>
+            <input type="text" class="form-control" id="category">
+          </div>
+          <div class="form-group">
+            <label for="title" class="col-form-label">Title:</label>
+            <textarea class="form-control" id="title"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="description" class="col-form-label">Description:</label>
+            <textarea class="form-control" id="description"></textarea>
+          </div>
+          <!-- Add other form fields as needed -->
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+<!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+        <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--<input type="button" value="Add Task" />-->
+<!--<input type="button" value="Delete Task" />-->
+
+
+{% endblock %}

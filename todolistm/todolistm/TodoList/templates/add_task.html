@@ -1,0 +1,19 @@
+<!-- todolist_app/templates/add_task.html -->
+
+<!DOCTYPE html>
+<!-- todolist_app/templates/add_task.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Task</title>
+</head>
+<body>
+    <h1>Add Task</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>

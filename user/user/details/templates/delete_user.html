@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete User</title>
+    <!-- Your styles here -->
+</head>
+<body>
+    <div class="container">
+        <h2>Delete User</h2>
+        <p>Are you sure you want to delete user {{ users.first_name }} {{ users.last_name }}?</p>
+        <form action="{% url 'delete-user' users.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Confirm Delete</button>
+        </form>
+        <a href="{% url 'table' %}">Cancel</a>
+    </div>
+</body>
+</html>

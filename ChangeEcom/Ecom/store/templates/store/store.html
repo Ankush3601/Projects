@@ -1,0 +1,22 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    {% for p in prds %}
+    <div class="col-lg-4">
+        <img src="{{p.imageurl}}" class="thumbnail"/>
+        <div class="box-element product">
+            <h6><strong>{{p.name}}</strong></h6>
+            <hr>
+            <form method="POST" action="{% url 'updateitem' %}">
+                {% csrf_token %}
+            <input type="submit"  class="btn btn-outline-secondary add-btn" value="Add to Cart" name="btn{{p.id}}"></input>
+				<a class="btn btn-outline-success" href="#">View</a>
+				<h4 style="display: inline-block; float: right"><strong>
+                    $. {{p.price}}</strong></h4>
+            </form>
+        </div>
+    </div>
+ {% endfor %}
+</div>
+{% endblock %}$

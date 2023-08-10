@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+My Home Page
+{% endblock %}
+{% block content %}
+<table width="100%" border="2">
+         <tr>
+             <th> Todolist </th>
+        </tr>
+       {% for t in data %}
+         <tr>
+             <td><h3>{{t.name}}</h3></td>
+         </tr>
+             <tr>
+                 <td><h3><a href="/{{t.id}}">{{t.name}}</a></h3></td>
+             </tr>
+            {% endfor %}
+        </table>
+{% endblock %}

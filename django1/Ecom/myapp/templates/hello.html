@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    This is Hello Html Page
+    <p>Welcome{{Name}}</p>
+    {% if married %}
+      Marital Status : Married
+    {% else %}
+      Marital Status : Single
+    {% endif %}
+<ul>
+    {% for q in Qual%}
+    <li>{{q}}</li>
+    {%  endfor %}
+</ul>
+<a href="/myapp/products/"> view products</a>
+</body>
+</html>
